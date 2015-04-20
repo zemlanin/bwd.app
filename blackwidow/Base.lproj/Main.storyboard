@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7531" systemVersion="14D131" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="blackwidow" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -15,11 +15,60 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ePh-vm-xKY">
+                                <rect key="frame" x="0.0" y="20" width="600" height="44"/>
+                                <items>
+                                    <navigationItem title="bwd" id="IwQ-fr-zLE">
+                                        <barButtonItem key="rightBarButtonItem" style="plain" id="o0n-Dd-hw7">
+                                            <button key="customView" hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="qJn-vv-Vcv" userLabel="castButton">
+                                                <rect key="frame" x="553" y="20" width="31" height="22"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="31" id="aK6-zZ-DyT"/>
+                                                </constraints>
+                                                <state key="normal" image="cast_off"/>
+                                                <connections>
+                                                    <action selector="toggleCastDevices:" destination="BYZ-38-t0r" eventType="touchUpInside" id="kHB-oq-WLX"/>
+                                                    <action selector="toggleCastDevices:" destination="BYZ-38-t0r" eventType="touchUpInside" id="21y-PT-yec"/>
+                                                </connections>
+                                            </button>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <tableView hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="7OA-sz-N5J">
+                                <rect key="frame" x="0.0" y="400" width="600" height="200"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="xeE-oo-e1a"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="5yN-4F-Kcy"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="zgq-SP-Jwj"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="ePh-vm-xKY" firstAttribute="leading" secondItem="7OA-sz-N5J" secondAttribute="leading" id="6eB-HH-zBu"/>
+                            <constraint firstItem="ePh-vm-xKY" firstAttribute="trailing" secondItem="7OA-sz-N5J" secondAttribute="trailing" id="avS-Ux-Tah"/>
+                            <constraint firstItem="7OA-sz-N5J" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" id="c0u-vy-yAc"/>
+                            <constraint firstItem="ePh-vm-xKY" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="20" id="enR-Qk-PUc"/>
+                            <constraint firstItem="7OA-sz-N5J" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="ifj-ED-NqK"/>
+                            <constraint firstAttribute="trailing" secondItem="7OA-sz-N5J" secondAttribute="trailing" id="psq-mX-K0h"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="castButton" destination="qJn-vv-Vcv" id="0A6-by-9Rp"/>
+                        <outlet property="castDevicesTable" destination="7OA-sz-N5J" id="sjY-dF-rj7"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
         </scene>
     </scenes>
+    <resources>
+        <image name="cast_off" width="29" height="22"/>
+    </resources>
 </document>
