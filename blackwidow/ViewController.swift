@@ -8,8 +8,10 @@
 
 import UIKit
 
-class ViewController: UIViewController, GCKDeviceScannerListener, UITableViewDelegate, UITableViewDataSource {
+class ViewController: UIViewController, GCKDeviceScannerListener, GCKDeviceManagerDelegate, UITableViewDelegate, UITableViewDataSource {
     var deviceScanner = GCKDeviceScanner()
+    var deviceManager: GCKDeviceManager?
+    var chromeCastKey = ""
 
     @IBOutlet weak var castButton: UIButton!
     @IBOutlet weak var castDevicesTable: UITableView!
@@ -18,6 +20,10 @@ class ViewController: UIViewController, GCKDeviceScannerListener, UITableViewDel
         super.viewDidLoad()
         
         castDevicesTable.registerClass(UITableViewCell.self, forCellReuseIdentifier: "device")
+        
+        let filterCriteria = GCKFilterCriteria(forAvailableApplicationWithID: chromeCastKey)
+        
+        self.deviceScanner.filterCriteria = filterCriteria
 
         deviceScanner.addListener(self)
         deviceScanner.startScan()
@@ -48,8 +54,18 @@ class ViewController: UIViewController, GCKDeviceScannerListener, UITableViewDel
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        println(deviceScanner.devices[indexPath.row].friendlyName)
-        // connect
+        let selectedDevice: GCKDevice = deviceScanner.devices[indexPath.row] as! GCKDevice
+        
+        self.deviceManager = GCKDeviceManager(device: selectedDevice, clientPackageName: NSBundle.mainBundle().infoDictionary?["CFBundleIdentifier"] as! String)
+        deviceManager?.delegate = self
+        deviceManager?.connect()
+    }
+    
+    // MARK: GCKDeviceManagerDelegate
+
+    func deviceManagerDidConnect(deviceManager: GCKDeviceManager!) {
+        println("connected")
+        self.deviceManager?.launchApplication(chromeCastKey)
         castDevicesTable.hidden = !castDevicesTable.hidden
     }
 
