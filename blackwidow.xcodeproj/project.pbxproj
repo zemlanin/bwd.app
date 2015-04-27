@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		A79C3782EF7407FE1697FE31 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E47A65606B9F9A3D31DF0A0A /* libPods.a */; };
+		A919A5BA1AEEB24D00A0EC80 /* SenderChannel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A919A5B91AEEB24D00A0EC80 /* SenderChannel.swift */; };
 		A9485E381AE58CC300598E86 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = A9485E371AE58CC300598E86 /* .gitignore */; };
 		A97808261AD91C5C007F4FA4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A97808251AD91C5C007F4FA4 /* AppDelegate.swift */; };
 		A97808281AD91C5C007F4FA4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A97808271AD91C5C007F4FA4 /* ViewController.swift */; };
@@ -34,6 +35,7 @@
 /* Begin PBXFileReference section */
 		5CB9AA4D715E66CD87404B91 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		87862AA1DF997D6C1C576D10 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		A919A5B91AEEB24D00A0EC80 /* SenderChannel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SenderChannel.swift; sourceTree = "<group>"; };
 		A9485E371AE58CC300598E86 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		A97808201AD91C5C007F4FA4 /* blackwidow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = blackwidow.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A97808241AD91C5C007F4FA4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -120,6 +122,7 @@
 				A978082C1AD91C5C007F4FA4 /* Images.xcassets */,
 				A978082E1AD91C5C007F4FA4 /* LaunchScreen.xib */,
 				A97808231AD91C5C007F4FA4 /* Supporting Files */,
+				A919A5B91AEEB24D00A0EC80 /* SenderChannel.swift */,
 			);
 			path = blackwidow;
 			sourceTree = "<group>";
@@ -302,6 +305,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A97808281AD91C5C007F4FA4 /* ViewController.swift in Sources */,
+				A919A5BA1AEEB24D00A0EC80 /* SenderChannel.swift in Sources */,
 				A97808261AD91C5C007F4FA4 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

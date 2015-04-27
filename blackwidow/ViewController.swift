@@ -11,10 +11,15 @@ import UIKit
 class ViewController: UIViewController, GCKDeviceScannerListener, GCKDeviceManagerDelegate, UITableViewDelegate, UITableViewDataSource {
     var deviceScanner = GCKDeviceScanner()
     var deviceManager: GCKDeviceManager?
-    var chromeCastKey = ""
+    var chromeCastKey = "0A4300E2"
+    
+    private lazy var textChannel: SenderChannel = {
+        return SenderChannel(namespace: "urn:x-cast:blackwidow")
+    }()
 
     @IBOutlet weak var castButton: UIButton!
     @IBOutlet weak var castDevicesTable: UITableView!
+    @IBOutlet weak var msgButton: UIButton!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,6 +47,11 @@ class ViewController: UIViewController, GCKDeviceScannerListener, GCKDeviceManag
     @IBAction func toggleCastDevices(sender: UIButton) {
         castDevicesTable.hidden = !castDevicesTable.hidden
     }
+
+    @IBAction func sendMessage(sender: UIButton) {
+        println("ping")
+        textChannel.sendTextMessage("\"ping\"")
+    }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return deviceScanner.devices.count
@@ -56,8 +66,9 @@ class ViewController: UIViewController, GCKDeviceScannerListener, GCKDeviceManag
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         let selectedDevice: GCKDevice = deviceScanner.devices[indexPath.row] as! GCKDevice
         
-        self.deviceManager = GCKDeviceManager(device: selectedDevice, clientPackageName: NSBundle.mainBundle().infoDictionary?["CFBundleIdentifier"] as! String)
+        deviceManager = GCKDeviceManager(device: selectedDevice, clientPackageName: NSBundle.mainBundle().infoDictionary?["CFBundleIdentifier"] as! String)
         deviceManager?.delegate = self
+        deviceManager?.addChannel(textChannel)
         deviceManager?.connect()
     }
     
@@ -67,6 +78,7 @@ class ViewController: UIViewController, GCKDeviceScannerListener, GCKDeviceManag
         println("connected")
         self.deviceManager?.launchApplication(chromeCastKey)
         castDevicesTable.hidden = !castDevicesTable.hidden
+        msgButton.hidden = false
     }
 
     // MARK: GCKDeviceScannerListener
