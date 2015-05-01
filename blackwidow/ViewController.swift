@@ -16,6 +16,7 @@ class ViewController: UIViewController, GCKDeviceScannerListener, GCKDeviceManag
     private lazy var textChannel: SenderChannel = {
         return SenderChannel(namespace: "urn:x-cast:blackwidow")
     }()
+    private var selectedDevice:GCKDevice?
 
     @IBOutlet weak var castButton: UIButton!
     @IBOutlet weak var castDevicesTable: UITableView!
@@ -49,6 +50,10 @@ class ViewController: UIViewController, GCKDeviceScannerListener, GCKDeviceManag
     }
 
     @IBAction func sendMessage(sender: UIButton) {
+        if (deviceManager == nil || !deviceManager!.isConnected) {
+            println("disconnected")
+            return
+        }
         println("ping")
         textChannel.sendTextMessage("\"ping\"")
     }
@@ -64,21 +69,44 @@ class ViewController: UIViewController, GCKDeviceScannerListener, GCKDeviceManag
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        let selectedDevice: GCKDevice = deviceScanner.devices[indexPath.row] as! GCKDevice
+        selectedDevice = deviceScanner.devices[indexPath.row] as? GCKDevice
         
         deviceManager = GCKDeviceManager(device: selectedDevice, clientPackageName: NSBundle.mainBundle().infoDictionary?["CFBundleIdentifier"] as! String)
-        deviceManager?.delegate = self
-        deviceManager?.addChannel(textChannel)
-        deviceManager?.connect()
+        deviceManager!.delegate = self
+        deviceManager!.connect()
     }
     
     // MARK: GCKDeviceManagerDelegate
+    
+    func deviceManager(deviceManager: GCKDeviceManager!,
+        didConnectToCastApplication
+        applicationMetadata: GCKApplicationMetadata!,
+        sessionID: String!,
+        launchedApplication: Bool) {
+            println("Application has launched.");
+            deviceManager.addChannel(self.textChannel)
+    }
 
     func deviceManagerDidConnect(deviceManager: GCKDeviceManager!) {
         println("connected")
         self.deviceManager?.launchApplication(chromeCastKey)
         castDevicesTable.hidden = !castDevicesTable.hidden
         msgButton.hidden = false
+    }
+    
+    func deviceManager(deviceManager: GCKDeviceManager!,
+        didFailToConnectToApplicationWithError error: NSError!) {
+            println("Received notification that device failed to connect to application.")
+    }
+    
+    func deviceManager(deviceManager: GCKDeviceManager!,
+        didFailToConnectWithError error: NSError!) {
+            println("Received notification that device failed to connect.")
+    }
+    
+    func deviceManager(deviceManager: GCKDeviceManager!,
+        didDisconnectWithError error: NSError!) {
+            println("Received notification that device disconnected.")
     }
 
     // MARK: GCKDeviceScannerListener
@@ -95,10 +123,5 @@ class ViewController: UIViewController, GCKDeviceScannerListener, GCKDeviceManag
         castDevicesTable.reloadData()
 //        deviceScanner.stopScan()
         println("Chromecast lost '\(device.friendlyName)'")
-    }
-
-    func deviceDidChange(device: GCKDevice!) {
-        castDevicesTable.reloadData()
-        println("Chromecast changed '\(device.friendlyName)'")
     }
 }
