@@ -10,6 +10,6 @@ import Foundation
 
 class SenderChannel: GCKCastChannel {
     override func didReceiveTextMessage(message: String!) {
-        println(message)
+        print(message)
     }
 }

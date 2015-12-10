@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		A79C3782EF7407FE1697FE31 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E47A65606B9F9A3D31DF0A0A /* libPods.a */; };
+		A9196E2A1AFA94CB0079EABC /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9196E291AFA94CB0079EABC /* AddressBook.framework */; };
 		A919A5BA1AEEB24D00A0EC80 /* SenderChannel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A919A5B91AEEB24D00A0EC80 /* SenderChannel.swift */; };
 		A9485E381AE58CC300598E86 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = A9485E371AE58CC300598E86 /* .gitignore */; };
 		A97808261AD91C5C007F4FA4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A97808251AD91C5C007F4FA4 /* AppDelegate.swift */; };
@@ -19,7 +20,6 @@
 		A97808461AD91CE2007F4FA4 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = A97808451AD91CE2007F4FA4 /* Podfile */; };
 		A97808481AD91F83007F4FA4 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A97808471AD91F83007F4FA4 /* SystemConfiguration.framework */; };
 		A978084E1AD91FA0007F4FA4 /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A978084D1AD91FA0007F4FA4 /* CoreText.framework */; };
-		A97808581AD92236007F4FA4 /* GoogleCast.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A97808571AD92236007F4FA4 /* GoogleCast.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +35,7 @@
 /* Begin PBXFileReference section */
 		5CB9AA4D715E66CD87404B91 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		87862AA1DF997D6C1C576D10 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		A9196E291AFA94CB0079EABC /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
 		A919A5B91AEEB24D00A0EC80 /* SenderChannel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SenderChannel.swift; sourceTree = "<group>"; };
 		A9485E371AE58CC300598E86 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		A97808201AD91C5C007F4FA4 /* blackwidow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = blackwidow.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -47,7 +48,7 @@
 		A97808351AD91C5C007F4FA4 /* blackwidowTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = blackwidowTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A978083A1AD91C5C007F4FA4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A978083B1AD91C5C007F4FA4 /* blackwidowTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = blackwidowTests.swift; sourceTree = "<group>"; };
-		A97808451AD91CE2007F4FA4 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
+		A97808451AD91CE2007F4FA4 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		A97808471AD91F83007F4FA4 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		A97808491AD91F8D007F4FA4 /* libPods-google-cast-sdk.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libPods-google-cast-sdk.a"; path = "Pods/../build/Debug-iphoneos/libPods-google-cast-sdk.a"; sourceTree = "<group>"; };
 		A978084D1AD91FA0007F4FA4 /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
@@ -64,7 +65,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A97808581AD92236007F4FA4 /* GoogleCast.framework in Frameworks */,
+				A9196E2A1AFA94CB0079EABC /* AddressBook.framework in Frameworks */,
 				A978084E1AD91FA0007F4FA4 /* CoreText.framework in Frameworks */,
 				A97808481AD91F83007F4FA4 /* SystemConfiguration.framework in Frameworks */,
 				A79C3782EF7407FE1697FE31 /* libPods.a in Frameworks */,
@@ -155,6 +156,7 @@
 		C75BA199F0A66089F88D1167 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A9196E291AFA94CB0079EABC /* AddressBook.framework */,
 				A97808571AD92236007F4FA4 /* GoogleCast.framework */,
 				A97808551AD92164007F4FA4 /* libPods-ConnectSDK.a */,
 				A97808531AD92143007F4FA4 /* ConnectSDK */,
@@ -179,6 +181,7 @@
 				A978081D1AD91C5B007F4FA4 /* Frameworks */,
 				A978081E1AD91C5B007F4FA4 /* Resources */,
 				BD03B637384BB8CD25FC4792 /* Copy Pods Resources */,
+				E4220E2A126C37E0F2586EB4 /* Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -213,11 +216,13 @@
 		A97808181AD91C5B007F4FA4 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0630;
+				LastSwiftUpdateCheck = 0700;
+				LastUpgradeCheck = 0710;
 				ORGANIZATIONNAME = ifelse;
 				TargetAttributes = {
 					A978081F1AD91C5B007F4FA4 = {
 						CreatedOnToolsVersion = 6.3;
+						DevelopmentTeam = SDZYQY57X2;
 					};
 					A97808341AD91C5C007F4FA4 = {
 						CreatedOnToolsVersion = 6.3;
@@ -297,6 +302,21 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		E4220E2A126C37E0F2586EB4 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -369,6 +389,7 @@
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -384,7 +405,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -423,7 +444,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -436,16 +457,17 @@
 			baseConfigurationReference = 5CB9AA4D715E66CD87404B91 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/Pods/google-cast-sdk/GoogleCastSDK-2.6.0-Release",
+					"$(PROJECT_DIR)/Pods/google-cast-sdk/GoogleCastSDK-2.10.1-Release",
+					"$(PROJECT_DIR)/Frameworks",
 				);
 				INFOPLIST_FILE = blackwidow/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/build/Debug-iphoneos",
-				);
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
@@ -455,7 +477,9 @@
 					"-framework",
 					"\"SystemConfiguration\"",
 				);
+				PRODUCT_BUNDLE_IDENTIFIER = "co.ifelse.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Bridging-Header.h";
 			};
 			name = Debug;
@@ -465,16 +489,17 @@
 			baseConfigurationReference = 87862AA1DF997D6C1C576D10 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/Pods/google-cast-sdk/GoogleCastSDK-2.6.0-Release",
+					"$(PROJECT_DIR)/Pods/google-cast-sdk/GoogleCastSDK-2.10.1-Release",
+					"$(PROJECT_DIR)/Frameworks",
 				);
 				INFOPLIST_FILE = blackwidow/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/build/Debug-iphoneos",
-				);
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
@@ -484,7 +509,9 @@
 					"-framework",
 					"\"SystemConfiguration\"",
 				);
+				PRODUCT_BUNDLE_IDENTIFIER = "co.ifelse.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Bridging-Header.h";
 			};
 			name = Release;
@@ -493,18 +520,17 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = blackwidowTests/Info.plist;
+				LD_MAP_FILE_PATH = "";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "co.ifelse.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/blackwidow.app/blackwidow";
+				TEST_HOST = "";
 			};
 			name = Debug;
 		};
@@ -512,14 +538,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = blackwidowTests/Info.plist;
+				LD_MAP_FILE_PATH = "";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "co.ifelse.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/blackwidow.app/blackwidow";
+				TEST_HOST = "";
 			};
 			name = Release;
 		};
