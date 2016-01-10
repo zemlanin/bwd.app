@@ -36,7 +36,6 @@ class ViewController: UIViewController, GCKDeviceScannerListener, GCKDeviceManag
             castButton.hidden = false
         }
 
-//        signIn?.signIn()
 //        self.deviceScanner.stopScan();
         // Do any additional setup after loading the view, typically from a nib.
     }
@@ -54,8 +53,8 @@ class ViewController: UIViewController, GCKDeviceScannerListener, GCKDeviceManag
             print("disconnected")
             return
         }
-        print("ping")
-        textChannel.sendTextMessage("\"ping\"")
+        print("refresh")
+        textChannel.sendTextMessage("\"refresh\"")
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
